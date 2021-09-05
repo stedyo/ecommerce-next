@@ -1,4 +1,4 @@
-import Cart from "@components/cart/cart";
+//import Cart from "@components/cart/cart";
 import { useUI } from "@contexts/ui.context";
 import { Drawer } from "@components/common/drawer/drawer";
 import { useRouter } from "next/router";
@@ -19,7 +19,7 @@ const ManagedDrawer = () => {
 			level={null}
 			contentWrapperStyle={contentWrapperCSS}
 		>
-			<Cart />
+			{/*<Cart />*/}
 		</Drawer>
 	);
 };

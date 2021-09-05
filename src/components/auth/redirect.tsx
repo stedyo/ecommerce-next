@@ -7,7 +7,7 @@ import { useUI } from "@contexts/ui.context";
 
 const Redirect = () => {
 	
-	const { setModalView, openModal, closeModal } = useUI();
+	const { closeModal } = useUI();
 	
 
 	

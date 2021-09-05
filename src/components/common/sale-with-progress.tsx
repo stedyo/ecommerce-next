@@ -5,12 +5,12 @@ import Carousel from "@components/ui/carousel/carousel";
 import { SwiperSlide } from "swiper/react";
 //import ProductFlashSaleGridLoader from "@components/ui/loaders/product-flash-sale-grid-loader";
 //import ProductFlashSaleLoader from "@components/ui/loaders/product-flash-sale-loader";
-import ProgressCard from "@components/common/progress-card";
+//import ProgressCard from "@components/common/progress-card";
 import SectionHeader from "@components/common/section-header";
 //import Alert from "@components/ui/alert";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import Axios from "axios";
-import { rest } from 'lodash';
+//import { rest } from 'lodash';
 
 
 interface Props {
@@ -39,7 +39,7 @@ const breakpoints = {
 };
 
 const SellWithProgress: React.FC<Props> = ({
-	products,
+	//products,
 	className = "",
 	productVariant = "list",
 	imgWidth = 210,
@@ -86,7 +86,7 @@ const SellWithProgress: React.FC<Props> = ({
 			} 
 
 			}).catch(err => {
-				//console.log(err)
+				console.log(err)
 			})
 	}, [])
 
@@ -139,9 +139,9 @@ const SellWithProgress: React.FC<Props> = ({
 														}`}
 													/>
 												</div>
-												<ProgressCard
+												{/*<ProgressCard
 													soldProduct={product?.clicks}
-												/>
+												/>*/}
 											</div>
 										</SwiperSlide>
 									))}

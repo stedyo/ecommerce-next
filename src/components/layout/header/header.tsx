@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 	const {
 		openSidebar,
 		setDrawerView,
-		openSearch,
+		//openSearch,
 
 	} = useUI();
 

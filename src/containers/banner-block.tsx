@@ -1,6 +1,4 @@
 import BannerCard from "@components/common/banner-card";
-import Link from "@components/ui/link";
-import { LinkedCameraRounded } from "@material-ui/icons";
 import { ROUTES } from "@utils/routes";
 import React from "react";
 interface BannerProps {

@@ -1,6 +1,6 @@
 import Link from "@components/ui/link";
 import SearchIcon from "@components/icons/search-icon";
-import UserIcon from "@components/icons/user-icon";
+//import UserIcon from "@components/icons/user-icon";
 import MenuIcon from "@components/icons/menu-icon";
 import HomeIcon from "@components/icons/home-icon";
 import { useUI } from "@contexts/ui.context";
@@ -9,12 +9,12 @@ import { ROUTES } from "@utils/routes";
 import dynamic from "next/dynamic";
 import { Drawer } from "@components/common/drawer/drawer";
 import { getDirection } from "@utils/get-direction";
-const CartButton = dynamic(() => import("@components/cart/cart-button"), {
+/*const CartButton = dynamic(() => import("@components/cart/cart-button"), {
 	ssr: false,
 });
 const AuthMenu = dynamic(() => import("@components/layout/header/auth-menu"), {
 	ssr: false,
-});
+});*/
 const MobileMenu = dynamic(
 	() => import("@components/layout/header/mobile-menu")
 );
@@ -25,16 +25,16 @@ const BottomNavigation: React.FC = () => {
 		closeSidebar,
 		displaySidebar,
 		setDrawerView,
-		openSearch,
-		openModal,
-		setModalView,
-		isAuthorized,
+		//openSearch,
+		//openModal,
+		//setModalView,
+		//isAuthorized,
 	} = useUI();
 
-	function handleLogin() {
+	/*function handleLogin() {
 		setModalView("LOGIN_VIEW");
 		return openModal();
-	}
+	}*/
 	function handleMobileMenu() {
 		setDrawerView("MOBILE_MENU");
 		return openSidebar();

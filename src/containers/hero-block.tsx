@@ -51,12 +51,12 @@ const HeroBlock: React.FC = () => {
 						desktop: {url: defaultBanner, width: '1800', height: '800'} 
 						}
 				}
-				setHighlights(highlights => [defaultBannerObj])
+				setHighlights(highlights => [...highlights, defaultBannerObj])
 			}
 
 			
 		}).catch(err => {
-			
+			console.log(err)
 			var defaultBannerObj = {id: 0,
 				title: 'Achados do Caramelus',
 				slug: '',
@@ -65,7 +65,7 @@ const HeroBlock: React.FC = () => {
 					desktop: {url: defaultBanner, width: '1800', height: '800'} 
 					}
 			}
-			setHighlights(highlights => [defaultBannerObj])
+			setHighlights(highlights => [...highlights, defaultBannerObj])
 		})
 	}, [])
 
@@ -101,8 +101,7 @@ const HeroBlock: React.FC = () => {
 					}
 					{banner.id === 0 &&
 					<BannerCard
-						banner={banner}
-						//href={`${ROUTES.PRODUCT}/}`}
+							banner={banner} href={''}						//href={`${ROUTES.PRODUCT}/}`}
 					/>
 					}
 					</SwiperSlide>

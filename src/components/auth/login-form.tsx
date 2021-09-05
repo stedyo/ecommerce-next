@@ -50,6 +50,7 @@ const LoginForm: React.FC = () => {
 
 			}).catch(err => {
 				// nothing here
+				console.log(err)
 			})
 		}
 

@@ -11,7 +11,6 @@ interface BannerProps {
 	variant?: "rounded" | "default";
 	effectActive?: boolean;
 	className?: string;
-	classNameInner?: string;
 	href: LinkProps["href"];
 }
 
@@ -19,7 +18,7 @@ function getImage(deviceWidth: number, imgObj: any) {
 	return deviceWidth < 480 ? imgObj.mobile : imgObj.desktop;
 }
 
-const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+const handleImageError = (e) => {
 	e.target.onerror = null;
     e.target.srcset = `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/default_destaque.png`
 }
@@ -30,7 +29,7 @@ const BannerCard: FC<BannerProps> = ({
 	className,
 	variant = "rounded",
 	effectActive = false,
-	href,
+	//href,
 }) => {
 	const { width } = useWindowSize();
 	const { title, image } = banner;
@@ -59,7 +58,4 @@ const BannerCard: FC<BannerProps> = ({
 };
 
 export default BannerCard;
-function classNameInner(arg0: string, classNameInner: any): string | undefined {
-	throw new Error("Function not implemented.");
-}
 

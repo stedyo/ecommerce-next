@@ -56,6 +56,7 @@ export const CategoryFilter = () => {
 				
 			}).catch(err => {
 				// nothing here
+				console.log(err)
 			})
 
 		} 

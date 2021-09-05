@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const data = {
 	title: "common:text-subscribe-heading",
@@ -62,7 +62,7 @@ const Subscription: React.FC<Props> = ({
 
 			}).catch(err => {
 				// nothing here
-				//console.log(err)
+				console.log(err)
 			})
 	
 		}

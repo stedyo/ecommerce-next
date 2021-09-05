@@ -103,7 +103,7 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
 			} 
 
 		}).catch(err => {
-			//console.log(err)
+			console.log(err)
 		})
 	}, [])
 

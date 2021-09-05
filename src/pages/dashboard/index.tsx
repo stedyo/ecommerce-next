@@ -14,7 +14,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import Input from '@components/ui/input';
@@ -71,9 +70,7 @@ const useStyles = makeStyles((theme) => ({
       
   }));
 
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+
   
   function dateRFC3339toMDY(date: string | number | Date){
    
@@ -97,7 +94,6 @@ export default function Dashboard() {
     const [subcategoriaComboSelectionAdd, setSubcategoriaComboSelectionAdd] = useState([])
     const [subcategoriesAdd, setsubCategoriesAdd] = useState<any[]>([])
 
-    var [addId, setAddId] = useState(0)
     var [addTitulo, setAddTitulo] = useState("")
     var [addDescricao, setAddDescricao] = useState("")
     var [addLinkAfiliado, setAddLinkAfiliado] = useState("")
@@ -149,38 +145,38 @@ export default function Dashboard() {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-    const handleChangeTituloAdd = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangeTituloAdd = (event) => {
         setAddTitulo(event.target.value)
      } 
  
-     const handleChangeDescricaoAdd = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+     const handleChangeDescricaoAdd = (event) => {
          setAddDescricao(event.target.value)
      } 
  
-     const handleChangeLinkAfiliadoAdd = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+     const handleChangeLinkAfiliadoAdd = (event) => {
          setAddLinkAfiliado(event.target.value)
      } 
  
-     const handleChangeObservacaoAdd= (event: { target: { value: React.SetStateAction<string>; }; }) => {
+     const handleChangeObservacaoAdd= (event) => {
          setAddObservacao(event.target.value)
      } 
  
-     const handleChangePrecoAdd = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+     const handleChangePrecoAdd = (event) => {
          setAddPreco(event.target.value)
      } 
  
-     const handleImageLinkAdd = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+     const handleImageLinkAdd = (event) => {
          setAddImageLink(event.target.value)
      } 
  
  
-     const handleUploadImageAdd = (event: { target: { files: any[]; }; }) =>{
+     const handleUploadImageAdd = (event) =>{
          setAddImageUploadExtension(event.target.files[0].name.split('.')[1])
          const url = event.target.files[0]
          setAddImageUpload(url)
      }
  
-     const handleUploadImgDestaqueAdd = (event: { target: { files: any[]; }; }) =>{
+     const handleUploadImgDestaqueAdd = (event) =>{
          setAddImageUploadDestaqueExtension(event.target.files[0].name.split('.')[1])
          const url = event.target.files[0]
          setAddImageUploadDestaque(url)
@@ -196,13 +192,13 @@ export default function Dashboard() {
      }
 
   
-     const handleSubCategoryAdd = (e: React.SetStateAction<{}>) =>{
+     const handleSubCategoryAdd = (e) =>{
         setAddSubcategoria(e.label)
         setAddSubcategoriaId(e.value)
         setSubcategoriaComboSelectionAdd(e)
     }
 
-   const handleCategoryAdd = (e: React.SetStateAction<{}>) =>{
+   const handleCategoryAdd = (e) =>{
         setAddCategoria(e.label)
         setCategoriaComboSelectionAdd(e)
         setsubCategoriesAdd([])
@@ -229,6 +225,7 @@ export default function Dashboard() {
 				
 			}).catch(err => {
 				// nothing here
+                console.log(err)
             })
         }
 
@@ -332,7 +329,7 @@ export default function Dashboard() {
                 
              }).catch(err => {
                  // nothing here
-                 //console.log(err)
+                 console.log(err)
              })
  
  
@@ -350,13 +347,13 @@ export default function Dashboard() {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
-    const handleSubCategory = (e: React.SetStateAction<{}>) =>{
+    const handleSubCategory = (e) =>{
         setEditSubcategoria(e.label)
         setEditSubcategoriaId(e.value)
         setSubcategoriaComboSelection(e)
     }
 
-   const handleCategory = (e: React.SetStateAction<{}>) =>{
+   const handleCategory = (e) =>{
         setEditCategoria(e.label)
         setCategoriaComboSelection(e)
         setsubCategories([])
@@ -383,6 +380,7 @@ export default function Dashboard() {
 				
 			}).catch(err => {
 				// nothing here
+                console.log(err)
             })
         }
 
@@ -391,7 +389,7 @@ export default function Dashboard() {
 
     const handleClose = () => {
         setOpen(false);
-        window.location.reload(true)   
+        window.location.reload()   
     };
 
 
@@ -482,7 +480,7 @@ export default function Dashboard() {
                
             }).catch(err => {
                 // nothing here
-                //console.log(err)
+                console.log(err)
             })
 
 
@@ -492,8 +490,8 @@ export default function Dashboard() {
     }
 
 
-    const myRef = React.createRef();
-    const fetchNextPage = (ref : any) => {
+    const myRef = React.createRef() as React.MutableRefObject<HTMLInputElement>;;
+    const fetchNextPage = (ref) => {
 		ref.current.scrollIntoView({behavior: 'smooth'})
 		const newCount = countPages + 1
 		setCountPages(newCount)
@@ -560,6 +558,7 @@ export default function Dashboard() {
 
             }).catch(err => {
                 // nothing here
+                console.log(err)
             })
         }
     }
@@ -568,38 +567,38 @@ export default function Dashboard() {
 
    
 
-    const handleChangeTitulo = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangeTitulo = (event) => {
        setEditTitulo(event.target.value)
     } 
 
-    const handleChangeDescricao = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangeDescricao = (event) => {
         setEditDescricao(event.target.value)
     } 
 
-    const handleChangeLinkAfiliado = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangeLinkAfiliado = (event) => {
         setEditLinkAfiliado(event.target.value)
     } 
 
-    const handleChangeObservacao = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangeObservacao = (event) => {
         setEditObservacao(event.target.value)
     } 
 
-    const handleChangePreco = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleChangePreco = (event) => {
         setEditPreco(event.target.value)
     } 
 
-    const handleImageLink = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    const handleImageLink = (event) => {
         setEditImageLink(event.target.value)
     } 
 
 
-    const handleUploadImage = (event: { target: { files: any[]; }; }) =>{
+    const handleUploadImage = (event) =>{
         setEditImageUploadExtension(event.target.files[0].name.split('.')[1])
         const url = event.target.files[0]
         setEditImageUpload(url)
     }
 
-    const handleUploadImgDestaque = (event: { target: { files: any[]; }; }) =>{
+    const handleUploadImgDestaque = (event) =>{
         setEditImageUploadDestaqueExtension(event.target.files[0].name.split('.')[1])
         const url = event.target.files[0]
         setEditImageUploadDestaque(url)
@@ -676,6 +675,7 @@ export default function Dashboard() {
                
             }).catch(err => {
                 // nothing here
+                console.log(err)
             })
         } else {
             window.location.href = '/signin'
@@ -788,7 +788,7 @@ export default function Dashboard() {
         }
 
         {/* EDITTT */}
-        <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <Dialog fullScreen open={open} onClose={handleClose}>
             <>
             <AppBar className={classes.appBar}>
             <Toolbar>
@@ -919,7 +919,7 @@ export default function Dashboard() {
                 />
 
             </ListItem>
-            <span style={{padding: '10px', fontSize: '15px', fontWeight: '500'}}>
+            <span style={{padding: '10px', fontSize: '15px', fontWeight: 500}}>
                 Ou clique aqui para inserir uma imagem que você fez no canva (tamanho normal):
             </span>
             <ListItem>
@@ -957,7 +957,7 @@ export default function Dashboard() {
 
 
         {/* ADDDD */}
-        <Dialog fullScreen open={openAdd} onClose={handleCloseAdd} TransitionComponent={Transition}>
+        <Dialog fullScreen open={openAdd} onClose={handleCloseAdd}>
             <>
             <AppBar className={classes.appBar}>
             <Toolbar>
@@ -1088,7 +1088,7 @@ export default function Dashboard() {
                 />
 
             </ListItem>
-            <span style={{padding: '10px', fontSize: '15px', fontWeight: '500'}}>
+            <span style={{padding: '10px', fontSize: '15px', fontWeight: 500}}>
                 Ou clique aqui para inserir uma imagem que você fez no canva (tamanho normal):
             </span>
             <ListItem>

@@ -21,7 +21,7 @@ const ProductSingleDetails: React.FC = () => {
 		query: { slug },
 	} = useRouter();
 
-	const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+	const handleImageError = (e) => {
 		e.target.onerror = null;
 		e.target.srcset = `${process.env.NEXT_PUBLIC_URL_PRODUCTS}/error.png`
 	}
@@ -129,6 +129,7 @@ const ProductSingleDetails: React.FC = () => {
 					
 				}).catch(err => {
 					// nothing here
+					console.log(err)
 				})
 			}
 		}, [slug])
@@ -303,7 +304,7 @@ const ProductSingleDetails: React.FC = () => {
 		}
 
 		<>
-		{setShow404 &&
+		{show404 &&
 		<div>
 			<Image
 				src="/assets/images/404.svg"

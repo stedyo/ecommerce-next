@@ -1,13 +1,12 @@
 import React from "react";
 import { getToken } from "@framework/utils/get-token";
-import { CartProvider } from "./cart/cart.context";
+
 
 export interface State {
   isAuthorized: boolean;
   displaySidebar: boolean;
   displayFilter: boolean;
   displayModal: boolean;
-  displayCart: boolean;
   displaySearch: boolean;
   modalView: string;
   modalData: any;
@@ -20,7 +19,6 @@ const initialState = {
   displaySidebar: false,
   displayFilter: false,
   displayModal: false,
-  displayCart: false,
   displaySearch: false,
   modalView: "LOGIN_VIEW",
   drawerView: null,
@@ -40,12 +38,6 @@ type Action =
     }
   | {
       type: "CLOSE_SIDEBAR";
-    }
-  | {
-      type: "OPEN_CART";
-    }
-  | {
-      type: "CLOSE_CART";
     }
   | {
       type: "OPEN_SEARCH";
@@ -126,18 +118,7 @@ function uiReducer(state: State, action: Action) {
         drawerView: null,
       };
     }
-    case "OPEN_CART": {
-      return {
-        ...state,
-        displayCart: true,
-      };
-    }
-    case "CLOSE_CART": {
-      return {
-        ...state,
-        displayCart: false,
-      };
-    }
+  
     case "OPEN_SEARCH": {
       return {
         ...state,
@@ -219,16 +200,7 @@ export const UIProvider: React.FC = (props) => {
     state.displaySidebar
       ? dispatch({ type: "CLOSE_SIDEBAR" })
       : dispatch({ type: "OPEN_SIDEBAR" });
-  const closeSidebarIfPresent = () =>
-    state.displaySidebar && dispatch({ type: "CLOSE_CART" });
-  const openCart = () => dispatch({ type: "OPEN_CART" });
-  const closeCart = () => dispatch({ type: "CLOSE_CART" });
-  const toggleCart = () =>
-    state.displaySidebar
-      ? dispatch({ type: "CLOSE_CART" })
-      : dispatch({ type: "OPEN_CART" });
-  const closeCartIfPresent = () =>
-    state.displaySidebar && dispatch({ type: "CLOSE_CART" });
+ 
 
   const openFilter = () => dispatch({ type: "OPEN_FILTER" });
   const closeFilter = () => dispatch({ type: "CLOSE_FILTER" });
@@ -256,11 +228,7 @@ export const UIProvider: React.FC = (props) => {
       openSidebar,
       closeSidebar,
       toggleSidebar,
-      closeSidebarIfPresent,
-      openCart,
-      closeCart,
-      toggleCart,
-      closeCartIfPresent,
+    
       openFilter,
       closeFilter,
       openModal,
@@ -287,7 +255,7 @@ export const useUI = () => {
 };
 
 export const ManagedUIContext: React.FC = ({ children }) => (
-  <CartProvider>
+  
     <UIProvider>{children}</UIProvider>
-  </CartProvider>
+
 );

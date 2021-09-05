@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import Text from "@components/ui/text";
 import { Category } from "@framework/types";
@@ -12,7 +11,7 @@ interface Props {
 
 const CategoryCard: React.FC<Props> = ({ category }) => {
 	
-	const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+	const handleImageError = (e) => {
 		e.target.onerror = null;
 		e.target.srcset = `${process.env.NEXT_PUBLIC_URL_PRODUCTS}/error.png`
 	}

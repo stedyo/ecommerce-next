@@ -6,6 +6,7 @@ import { Product } from "@framework/types";
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 
+
 interface ProductsProps {
 	sectionHeading: string;
 	categorySlug?: string;
@@ -42,6 +43,7 @@ const ProductsBlock: React.FC<ProductsProps> = ({
 						name: res.data[key].product_name,
 						description: res.data[key].description,
 						slug: res.data[key].id,
+						urlImagem: image,
 						image: {
 							id: res.data[key].id,
 							thumbnail: {url: image, width: '480', height: '275'},
@@ -60,8 +62,10 @@ const ProductsBlock: React.FC<ProductsProps> = ({
 			
 		}).catch(err => {
 			// nothing here
+			console.log(err)
 		})
 	}, [])
+
 
 	
 	return (
@@ -75,16 +79,13 @@ const ProductsBlock: React.FC<ProductsProps> = ({
 			
 			<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-x-3 md:gap-x-5 xl:gap-x-7 gap-y-3 xl:gap-y-5 2xl:gap-y-8">
 			
-				{latest?.map((product: Product) => (
-					<span style={{borderBottom: "1px dashed #E0E0E0",borderLeft: "1px dashed #E0E0E0"}}>
+				
+				{latest?.map((product) => (
 					<ProductCard
 						key={`product--key${product.id}`}
 						product={product}
-						imgWidth={500}
-						imgHeight={500}
 						variant="grid"
 					/>
-					</span>
 				))}
 				
 				

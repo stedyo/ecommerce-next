@@ -1,14 +1,14 @@
-import BannerCard from "@components/common/banner-card";
+//import BannerCard from "@components/common/banner-card";
 import SellWithProgress from "@components/common/sale-with-progress";
-import { useFlashSaleProductsQuery } from "@framework/product/get-all-flash-sale-products";
+//import { useFlashSaleProductsQuery } from "@framework/product/get-all-flash-sale-products";
 import classNames from "classnames";
-import { ROUTES } from "@utils/routes";
-import Alert from "@components/ui/alert";
+//import { ROUTES } from "@utils/routes";
+//import Alert from "@components/ui/alert";
 
 interface Props {
 	className?: string;
 }
-
+/*
 const banner = {
 	id: 1,
 	title: "banner-on-selected-items",
@@ -25,7 +25,7 @@ const banner = {
 			height: 450,
 		},
 	},
-};
+};*/
 
 const flashSaleCarouselBreakpoint = {
 	"1281": {
@@ -64,11 +64,10 @@ const FlashSaleBlock: React.FC<Props> = ({
 				<Alert message={error?.message} />
 			) : (*/}
 				<SellWithProgress	
-					carouselBreakpoint={flashSaleCarouselBreakpoint}
-					//products={data?.productFlashSellList}
-					//loading={isLoading}
-					className="col-span-full xl:col-span-1 lg:mb-1 xl:mb-0"
-				/>
+				carouselBreakpoint={flashSaleCarouselBreakpoint}
+				//products={data?.productFlashSellList}
+				//loading={isLoading}
+				className="col-span-full xl:col-span-1 lg:mb-1 xl:mb-0" products={[]} loading={false}				/>
 			{/*})}*/}
 		</div>
 	);

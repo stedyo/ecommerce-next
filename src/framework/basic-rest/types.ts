@@ -35,6 +35,8 @@ export type Attachment = {
   id: string | number;
   thumbnail: string;
   original: string;
+  width: string;
+  height: string;
 };
 export type Category = {
   id: number | string;
@@ -73,7 +75,7 @@ export type Product = {
   id: number | string;
   name: string;
   slug: string;
-  price: number;
+  price: string;
   quantity: number;
   sale_price?: number;
   image: Attachment;
@@ -82,8 +84,10 @@ export type Product = {
   category?: Category;
   tag?: Tag[];
   meta?: any[];
+  urlImagem: string;
   description?: string;
   variations?: object;
+  url: string;
   [key: string]: unknown;
 };
 export type OrderItem = {

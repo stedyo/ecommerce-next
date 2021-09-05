@@ -29,14 +29,14 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 	const [curPrice, setcurPrice] = useState(query.price)
 	const [curCategories, setcurCategories] = useState(query.category)
 	const [totalItems, setTotalItens] = useState(0)
-	const [filterCombobox, setFilterCBox] = useState("newest")
+	const [filterCombobox] = useState("newest")
 
 	const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
 	const [filteredPetLovers, setFilteredPetLovers] = useState<any[]>([]);
 	const [loadMore, setLoadMore] = useState(false)
 	
 	
-	const myRef = React.createRef();
+	const myRef = React.createRef() as React.MutableRefObject<HTMLInputElement>;
 	const fetchNextPage = (ref : any) => {
 		ref.current.scrollIntoView({behavior: 'smooth'})
 		const newCount = countPages + 1
@@ -146,7 +146,6 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 								thumbnail: {url: image, width: '480', height: '275'},
 								original: {url: image, width: '1800', height: '800'}
 							},
-							galery:[],
 							price: res.data[key].price,
 							sale_price: res.data[key].price,
 							variations: [],
@@ -197,6 +196,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 						}
 					}).catch(err => {
 						// nothing here
+						console.log(err)
 					})
 			
 				}
@@ -204,12 +204,15 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 				
 			}).catch(err => {
 				// nothing here
+				console.log(err)
 			})
 	
 
 		}
 		
 	}, [countPages, query])
+
+	console.log("ultimos adicionadis")
 
 	const { locale } = useRouter();
 	const { openFilter, displayFilter, closeFilter } = useUI();

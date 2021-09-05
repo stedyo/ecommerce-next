@@ -25,7 +25,7 @@ const Card: React.FC<Props> = ({
 	href,
 }) => {
 
-	const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+	const handleImageError = (e) => {
 		e.target.onerror = null;
 		e.target.srcset = `${process.env.NEXT_PUBLIC_URL_CATEGORIAS}/default.png`
 	}

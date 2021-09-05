@@ -5,7 +5,7 @@ import ProductSingleDetails from "@components/product/product-single-details";
 import Divider from "@components/ui/divider";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+
 
 export default function ProductPage() {
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { getDirection } from "@utils/get-direction";
+//import { getDirection } from "@utils/get-direction";
 interface CategoryBannerProps {
 	className?: string;
 }
@@ -8,8 +8,8 @@ interface CategoryBannerProps {
 const CategoryBanner: React.FC<CategoryBannerProps> = ({
 	className = "mb-7",
 }) => {
-	const { locale } = useRouter();
-	const dir = getDirection(locale);
+	//const { locale } = useRouter();
+	//const dir = getDirection(locale);
 	const {
 		query: { slug },
 	} = useRouter();

@@ -1,5 +1,4 @@
 import cn from "classnames";
-import Image from "next/image";
 import type { FC } from "react";
 import { Product } from "@framework/types";
 import router from "next/router";
@@ -24,13 +23,13 @@ const ProductCard: FC<ProductProps> = ({
 	variant = "list",
 	imgWidth = 340,
 	imgHeight = 440,
-	imgLoading,
+
 }) => {
 	
 	
 	//const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
 	
-	const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+	const handleImageError = (e) => {
 		e.target.onerror = null;
 		e.target.srcset = `${process.env.NEXT_PUBLIC_URL_PRODUCTS}/error.png`
 	}
@@ -76,12 +75,11 @@ const ProductCard: FC<ProductProps> = ({
 			>
 				
 				
-				<Image
-					src={product?.image?.thumbnail.url}
+				<img
+					src={product?.urlImagem}
 					width={imgWidth}
 					height={imgHeight}
-					loading={imgLoading}
-					quality={100}
+					//quality={100}
 					onError={handleImageError}
 					alt={product?.name || "Product Image"}
 					className={cn("bg-gray-300 object-cover rounded-s-md", {

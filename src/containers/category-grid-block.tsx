@@ -84,6 +84,7 @@ const CategoryGridBlock: React.FC<CategoriesProps> = ({
 
 		}).catch(err => {
 			// nothing here
+			console.log(err)
 		})
 	}, [])
 

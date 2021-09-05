@@ -44,6 +44,7 @@ export const AnimalCategoryFilter = () => {
 				
 			}).catch(err => {
 				// nothing here
+				console.log(err)
 			})
 
 		} 

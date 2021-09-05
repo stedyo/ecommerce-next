@@ -18,7 +18,7 @@ const handleProductView = (product_id: any) =>{
 	
 }
 
-const handleImageError = (e: { target: { onerror: null; srcset: string; }; }) => {
+const handleImageError = (e) => {
 	e.target.onerror = null;
     e.target.srcset = `${process.env.NEXT_PUBLIC_URL_PRODUCTS}/error.png`
 }
@@ -61,7 +61,7 @@ const Instagram: React.FC<Props> = ({ className = "", 	productVariant = "list" }
 			} 
 
 			}).catch(err => {
-				//console.log(err)
+				console.log(err)
 			})
 	}, [])
 

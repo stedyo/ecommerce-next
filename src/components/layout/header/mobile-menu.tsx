@@ -6,15 +6,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import Logo from "@components/ui/logo";
 import { useUI } from "@contexts/ui.context";
 import {
-	IoLogoInstagram,
-	IoLogoTwitter,
-	IoLogoFacebook,
-	IoLogoYoutube,
+	//IoLogoInstagram,
+	//IoLogoTwitter,
+	//IoLogoFacebook,
+	//IoLogoYoutube,
 	IoClose,
 } from "react-icons/io5";
 import { useTranslation } from "next-i18next";
 
-const social = [
+/*const social = [
 	{
 		id: 0,
 		link: "https://www.facebook.com/redqinc/",
@@ -43,7 +43,7 @@ const social = [
 		className: "instagram",
 		title: "text-instagram",
 	},
-];
+];*/
 
 export default function MobileMenu() {
 	const [activeMenus, setActiveMenus] = useState<any>([]);
