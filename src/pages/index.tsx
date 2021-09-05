@@ -15,6 +15,9 @@ import BannerCard from "@components/common/banner-card";
 
 export default function Home() {
 
+
+
+
 	return (
 		<>
 			<HeroBlock />

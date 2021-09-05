@@ -24,6 +24,7 @@ const HeroBlock: React.FC = () => {
 	const [highlights, setHighlights] = useState<any[]>([]);
 
 
+
 	useEffect(() => {
 		Axios.get(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.GETDESTAQUES)
         .then(res => {
