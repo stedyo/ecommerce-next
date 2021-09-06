@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "@components/ui/button";
-import { useRouter } from "next/router";
-import { BiBeenHere } from "react-icons/bi";
+import router, { useRouter } from "next/router";
+import { BiArrowBack, BiBeenHere } from "react-icons/bi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import Link from "@components/ui/link";
 import { useWindowSize } from "@utils/use-window-size";
@@ -162,7 +162,11 @@ const ProductSingleDetails: React.FC = () => {
 		{data !== undefined &&
 		<>
 		<div className="py-6">
-			<br />
+			
+				<span>
+					<Button className="bg-caramelus" onClick={() => router.back()} style={{height: "40px"}} ><BiArrowBack /> &nbsp; Voltar </Button>
+				</span>
+			<br /><br />
 			<span className="font-semibold text-heading inline-block pe-2">
 				Você está vendo:
 			</span>

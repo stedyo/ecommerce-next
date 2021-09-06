@@ -1,5 +1,6 @@
 import Container from "@components/ui/container";
 import Layout from "@components/layout/layout";
+import { BiArrowBack } from "react-icons/bi";
 import StickyBox from "react-sticky-box";
 import { BreadcrumbItems } from "@components/common/breadcrumb";
 import ActiveLink from "@components/ui/active-link";
@@ -10,7 +11,8 @@ import { ProductGrid } from "@components/product/product-grid";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CategoryBanner from "@containers/category-banner";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
+import Button from "@components/ui/button";
 
 export default function Category() {
 	const { query } = useRouter();
@@ -21,8 +23,11 @@ export default function Category() {
 		<div className="border-t-2 border-borderBottom">
 			<Container>
 				<CategoryBanner />
-			
+				<span>
+					<Button className="bg-caramelus" onClick={() => router.back()} style={{height: "40px"}} ><BiArrowBack /> &nbsp; Voltar </Button>
+				</span>
 				<div className={`flex pt-8 pb-16 lg:pb-20`}>
+				
 					<div className="flex-shrink-0 pe-24 hidden lg:block w-96">
 						<StickyBox offsetTop={50} offsetBottom={20}>
 							<div className="pb-7">

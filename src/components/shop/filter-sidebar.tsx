@@ -34,7 +34,7 @@ const FilterSidebar = () => {
 					Filtros
 				</h2>
 			</div>
-			<button onClick={closeFilter} style={{background: "#B42B51"}} className="text-sm md:text-base leading-4 flex items-center justify-center px-7 flex-shrink-0 h-14  text-white">
+			<button onClick={closeFilter}  className="bg-caramelus text-sm md:text-base leading-4 flex items-center justify-center px-7 flex-shrink-0 h-14  text-white">
 				Ok, Filtrar
 			</button>
 

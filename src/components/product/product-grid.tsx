@@ -2,8 +2,6 @@ import ProductCard from "@components/product/product-card";
 import Button from "@components/ui/button";
 import { FC, useEffect, useState } from "react";
 import Text from "@components/ui/text";
-import { useRouter } from "next/router";
-//import ProductFeedLoader from "@components/ui/loaders/product-feed-loader";
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import React from "react";
@@ -17,6 +15,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { makeStyles } from '@material-ui/core/styles';
 import { ROUTES } from "@utils/routes";
+import { useRouter } from "next/router";
 
 interface ProductGridProps {
 	className?: string;
@@ -55,25 +54,6 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 	  }));
 
 	const classes = useStyles();
-
-	/*const handleFiltering = (event: { target: { value: string; }; }) => {
-		
-		setFilterCBox(event.target.value)
-	
-		if(event.target.value && event.target.value !== null && event.target.value !== "" && event.target.value != undefined){
-			if(event.target.value === "low-price"){
-				console.log('filtrar menor preço')
-			} else if(event.target.value === "highest-price"){
-				console.log('filtrar maior preço')
-			} else {
-				console.log("novidade, que é o default")
-			}
-		}
-		
-
-	}*/
-
-
 
 	useEffect(() => {
 
