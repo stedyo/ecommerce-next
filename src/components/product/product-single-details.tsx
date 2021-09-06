@@ -185,6 +185,7 @@ const ProductSingleDetails: React.FC = () => {
 		<div  className="block lg:grid grid-cols-9 gap-x-10 xl:gap-x-14 pt-7 pb-10 lg:pb-14 2xl:pb-20 items-start">
 			{width < 1025 ? (
 				<div className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+					
 					<img
 					src={
 						data?.image?.original?.url
@@ -192,7 +193,8 @@ const ProductSingleDetails: React.FC = () => {
 					alt={`${data?.name}--${data?.id}`}
 					className="object-cover w-full"
 					onError={handleImageError}
-					style={{boxShadow:"5px 5px 5px #ccc"}}
+					style={{boxShadow:"5px 5px 5px #ccc", maxWidth:"500px"}}
+						
 					/>
 				</div>
 			) : (
@@ -208,7 +210,7 @@ const ProductSingleDetails: React.FC = () => {
 								alt={`${data?.name}--${data?.id}`}
 								className="object-cover w-full"
 								onError={handleImageError}
-								style={{boxShadow:"5px 5px 5px #ccc"}}
+								style={{boxShadow:"5px 5px 5px #ccc", maxWidth: "500px"}}
 							/>
 						</div>
 				</div>

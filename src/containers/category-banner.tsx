@@ -36,9 +36,12 @@ const CategoryBanner: React.FC<CategoryBannerProps> = ({
 
 
 	return (
+		<>
+		<br />
 		<div
 			className={`bg-gray-200 rounded-md relative flex flex-row ${className}`}
 		>
+			
 			<div className="hidden md:flex">
 				<Image
 					src={banner}
@@ -54,6 +57,7 @@ const CategoryBanner: React.FC<CategoryBannerProps> = ({
 				</h2>
 			</div>
 		</div>
+	 </>
 	);
 };
 

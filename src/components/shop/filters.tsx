@@ -42,7 +42,7 @@ export const ShopFilters: React.FC = () => {
 						value="cachorros"
 						checked={query.slug === "cachorros"  ? true : false}
 						onClick={handleRadio}
-						
+						readOnly
 					/>
 					<span className="ms-2 text-sm text-heading relative">
 						Cachorros
@@ -56,7 +56,7 @@ export const ShopFilters: React.FC = () => {
 						value="gatos"
 						checked={query.slug === "gatos" ? true : false}
 						onClick={handleRadio}
-						
+						readOnly
 					/>
 					<span className="ms-2 text-sm text-heading relative">
 						Gatos
@@ -70,7 +70,7 @@ export const ShopFilters: React.FC = () => {
 						value="peixes"
 						checked={query.slug === "peixes"  ? true : false}
 						onClick={handleRadio}
-						
+						readOnly
 					/>
 					<span className="ms-2 text-sm text-heading relative">
 						Peixes
@@ -84,7 +84,7 @@ export const ShopFilters: React.FC = () => {
 						value="lovers"
 						checked={query.slug === "lovers"  ? true : false}
 						onClick={handleRadio}
-						
+						readOnly
 					/>
 					<span className="ms-2 text-sm text-heading relative">
 						Pet Lovers
@@ -98,7 +98,7 @@ export const ShopFilters: React.FC = () => {
 						value="outros"
 						checked={query.slug === "outros"  ? true : false}
 						onClick={handleRadio}
-						
+						readOnly
 					/>
 					<span className="ms-2 text-sm text-heading relative">
 						Outros Pets

@@ -110,6 +110,7 @@ export const AnimalCategoryFilter = () => {
 						value={item.slug}
 						checked={formState.includes(item.slug)}
 						onChange={handleItemClick}
+						//readOnly
 					/>
 					
 				))}

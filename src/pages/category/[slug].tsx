@@ -47,7 +47,6 @@ export default function Category() {
 					</div>
 
 					<div className="w-full lg:-ms-9">
-						{/*<SearchTopBar />*/}
 						<ProductGrid />
 					</div>
 				</div>

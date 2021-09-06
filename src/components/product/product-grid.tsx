@@ -34,6 +34,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 	const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
 	const [filteredPetLovers, setFilteredPetLovers] = useState<any[]>([]);
 	const [loadMore, setLoadMore] = useState(false)
+	const [showPetLovers, setShowPetLovers] = useState(false)
 	
 	
 	const myRef = React.createRef() as React.MutableRefObject<HTMLInputElement>;
@@ -119,6 +120,10 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 			
 			Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.GETFILTEREDPRODUCTS, params)
 			.then(res => {
+
+				if(res.status !== 200){
+					setShowPetLovers(true)
+				}
 			
 				if(res.status === 200 && res.data.length > 0){
 					
@@ -141,6 +146,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 							name: res.data[key].product_name,
 							description: res.data[key].description,
 							slug: res.data[key].id,
+							urlImagem: image,
 							image: {
 								id: res.data[key].id,
 								thumbnail: {url: image, width: '480', height: '275'},
@@ -212,7 +218,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 		
 	}, [countPages, query])
 
-	console.log("ultimos adicionadis")
+
 
 	const { locale } = useRouter();
 	const { openFilter, displayFilter, closeFilter } = useUI();
@@ -230,12 +236,12 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 				onClick={openFilter}
 			>
 				<FilterIcon />
-				<span className="ps-2.5">filtros</span>
+				<span className="ps-2.5">Filtros</span>
 			</button>
 			<div className="flex items-center justify-end">
 				{totalItems > 0 &&
 				<div className="flex-shrink-0 text-body text-xs md:text-sm leading-4 pe-4 md:me-6 ps-2 hidden lg:block">
-					Caramelu's encontrou <strong>{totalItems} itens</strong> para você 
+					Caramelu's encontrou <strong>{totalItems} {totalItems > 1 ? 'itens': 'item'}</strong> para você 
 				</div>
 				}
 				    
@@ -293,7 +299,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 			</div>
 			</>
 			}
-			{filteredProducts.length === 0 &&
+			{showPetLovers &&
 				<>
 				<div style={{fontSize: "16px", textAlign: "center", padding:"0px 10px 70px 0px"}}>
 					

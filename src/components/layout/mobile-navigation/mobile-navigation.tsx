@@ -44,7 +44,7 @@ const BottomNavigation: React.FC = () => {
 	const dir = getDirection(locale);
 	const contentWrapperCSS = dir === "ltr" ? { left: 0 } : { right: 0 };
 
-	const { query } = useRouter();
+	//const { query } = useRouter();
 	return (
 		<>
 			<div className="md:hidden fixed z-10 bottom-0 flex items-center justify-between shadow-bottomNavigation text-gray-700 body-font bg-white w-full h-14 sm:h-16 px-4">
@@ -61,7 +61,7 @@ const BottomNavigation: React.FC = () => {
 				</Link>
 				<Link
 					className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none"
-					href={`${ROUTES.CATEGORY}/${query.slug}`}
+					href={`${ROUTES.CATEGORY}/cachorros`}
 					aria-label="search-button"
 				>
 					<SearchIcon />
