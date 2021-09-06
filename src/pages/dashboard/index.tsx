@@ -288,7 +288,8 @@ export default function Dashboard() {
                              
                              Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData, {
                              headers: {
-                                 'Content-Type': 'multipart/form-data'
+                                 'Content-Type': 'multipart/form-data',
+                                 'Access-Control-Allow-Origin' : '*'
                              }                          
                              });
                          
@@ -312,7 +313,8 @@ export default function Dashboard() {
                                  formData.append('file',  addImageUploadDestaque, filename);
                                  Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData, {
                                  headers: {
-                                     'Content-Type': 'multipart/form-data'
+                                     'Content-Type': 'multipart/form-data',
+                                     'Access-Control-Allow-Origin' : '*'
                                  }                          
                                  });
                              
@@ -439,7 +441,8 @@ export default function Dashboard() {
                             
                             Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData, {
                             headers: {
-                                'Content-Type': 'multipart/form-data'
+                                'Content-Type': 'multipart/form-data',
+                                'Access-Control-Allow-Origin' : '*'
                             }                          
                             });
                         
@@ -463,7 +466,8 @@ export default function Dashboard() {
                                 formData.append('file',  editImageUploadDestaque, filename);
                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData, {
                                 headers: {
-                                    'Content-Type': 'multipart/form-data'
+                                    'Content-Type': 'multipart/form-data',
+                                    'Access-Control-Allow-Origin' : '*'
                                 }                          
                                 });
                             
