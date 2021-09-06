@@ -286,16 +286,11 @@ export default function Dashboard() {
                              formData.append('file',  addImageUpload, filename);
  
                              
-                             Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
-                             .then(res => {
-				
-                               console.log(res)
-                                
-                            }).catch(err => {
-                                // nothing here
-                                console.log(err)
-                            })
-                             
+                             Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData, {
+                             headers: {
+                                 'Content-Type': 'multipart/form-data'
+                             }                          
+                             });
                          
                          } catch (err) {
                              alert("A imagem do produto não foi enviada")
@@ -315,15 +310,11 @@ export default function Dashboard() {
                                  
                                  const formData = new FormData();
                                  formData.append('file',  addImageUploadDestaque, filename);
-                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData)
-                                 .then(res => {
-				
-                                 console.log(res)
-                                    
-                                }).catch(err => {
-                                    // nothing here
-                                    console.log(err)
-                                })
+                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData, {
+                                 headers: {
+                                     'Content-Type': 'multipart/form-data'
+                                 }                          
+                                 });
                              
                              } catch (err) {
                                  alert("A imagem do banner de destaque não foi enviada")
@@ -446,15 +437,11 @@ export default function Dashboard() {
                             formData.append('file',  editImageUpload, filename);
 
                             
-                            Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
-                            .then(res => {
-				
-                               console.log(res)
-                                
-                            }).catch(err => {
-                                // nothing here
-                                console.log(err)
-                            })
+                            Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }                          
+                            });
                         
                         } catch (err) {
                             alert("A imagem do produto não foi enviada")
@@ -474,15 +461,11 @@ export default function Dashboard() {
                                 
                                 const formData = new FormData();
                                 formData.append('file',  editImageUploadDestaque, filename);
-                                Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData)
-                                .then(res => {
-				
-                                  console.log(res)
-                                    
-                                }).catch(err => {
-                                    // nothing here
-                                    console.log(err)
-                                })
+                                Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData, {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }                          
+                                });
                             
                             } catch (err) {
                                 alert("A imagem do banner de destaque não foi enviada")
