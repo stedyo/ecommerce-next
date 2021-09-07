@@ -104,7 +104,7 @@ const ProductCard: FC<ProductProps> = ({
 					contactClassName
 				)}
 			>
-				<p style={{color: "#ff6666", fontSize: "9px", margin:"0px", textTransform: "uppercase"}}>
+				<p style={{color: "#38A3A5", fontSize: "10px", margin:"0px", fontWeight:600, textTransform: "uppercase"}}>
 					{product?.categoria} //  {product?.subcategoria}
 				</p>	
 				

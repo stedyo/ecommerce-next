@@ -110,6 +110,7 @@ const ProductSingleDetails: React.FC = () => {
 										name: res.data[0].related[rkey].product_name,
 										description: res.data[0].related[rkey].description,
 										slug: res.data[0].related[rkey].id,
+										urlImagem: image,
 										image: {
 											id: res.data[0].related[rkey].id,
 											thumbnail: {url: image, width: '480', height: '275'},
@@ -230,7 +231,7 @@ const ProductSingleDetails: React.FC = () => {
 					</p>
 					<div className="flex items-center mt-5">
 						<div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl pe-2 md:pe-0 lg:pe-2 2xl:pe-0">
-							R$ {parseFloat(data?.price).toFixed(2)}
+							A partir de R$ {parseFloat(data?.price).toFixed(2)}
 						</div>
 						
 					</div>
@@ -247,7 +248,7 @@ const ProductSingleDetails: React.FC = () => {
 						<span className="py-2 3xl:px-8">COMPRAR</span>
 					</Button>
 				</div>
-				{data?.observacao !== "" &&
+				{data?.observacao !== "" && data?.observacao !== null &&
 				<div style={{marginTop: "10px"}} className="pb-3 border-b border-gray-300">
 					<strong>Observação: </strong>{data?.observacao}
 				</div>

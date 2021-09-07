@@ -7,7 +7,7 @@ module.exports = {
 			colors: {
 				body: "#5A5A5A",
 				heading: "#212121",
-				caramelus: "#B42B51",
+				caramelus: "#A03C78",
 				input: "#1D1E1F",
 				black: "#000",
 				white: "#fff",

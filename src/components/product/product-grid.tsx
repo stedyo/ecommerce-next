@@ -146,7 +146,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 					.then(res => {
 						if(res.status === 200 && res.data.length > 0){
 					
-							//setTotalItens(res.data[0].total_count)
+							setTotalItens(res.data[0].total_count)
 		
 							if(res.data.length == 15){ // se achou 15 resultados, mostra o botao de carregar mais
 								setLoadMore(true)
@@ -165,6 +165,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
 									name: res.data[key].product_name,
 									description: res.data[key].description,
 									slug: res.data[key].id,
+									urlImagem: image,
 									image: {
 										id: res.data[key].id,
 										thumbnail: {url: image, width: '480', height: '275'},

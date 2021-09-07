@@ -27,8 +27,8 @@ const categoria = [
     {value: '1', label: 'Cachorros'},
     {value: '2', label: 'Gatos'},
     {value: '3', label: 'Peixes'},
-    {value: '4', label: 'Pet Lovers'}, 
-    {value: '5', label: 'Outros Pets'},
+    {value: '4', label: 'Outros Pets'},
+    {value: '5', label: 'Pet Lovers'}, 
 ]
 
 const styles = {

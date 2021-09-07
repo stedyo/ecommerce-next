@@ -7,11 +7,7 @@ const priceFilterItems = [
 		name: "até R$50",
 		slug: "1",
 	},
-	{
-		id: "2",
-		name: "até R$100",
-		slug: "2",
-	},
+	
 	{
 		id: "3",
 		name: "até R$150",
