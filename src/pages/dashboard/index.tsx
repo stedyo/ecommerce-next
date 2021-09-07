@@ -311,28 +311,30 @@ export default function Dashboard() {
                      if(addCheckedDestaque){
                          if(addImageUploadDestaque !== ""){
                          
-                             // vai tentar salvar a imagem de destaque
-                             try {
-                                 var filename = `${res.data.insertId}.${addImageUploadDestaqueExtension}`
-                                 
-                                
-
-                                 const formData = new FormData();
-                                 formData.append('file',  addImageUploadDestaque, filename);
-                                 formData.append('type', 'highlight')
-                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
-                                 .then(res => {
-                                    console.log('highlight')
-                                 console.log(res)
+                            setTimeout(function () {
+                                // vai tentar salvar a imagem de destaque
+                                try {
+                                    var filename = `${res.data.insertId}.${addImageUploadDestaqueExtension}`
                                     
-                                }).catch(err => {
-                                    // nothing here
-                                    console.log(err)
-                                })
-                             
-                             } catch (err) {
-                                 alert("A imagem do banner de destaque não foi enviada")
-                             }
+                                    
+
+                                    const formData = new FormData();
+                                    formData.append('file',  addImageUploadDestaque, filename);
+                                    formData.append('type', 'highlight')
+                                    Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
+                                    .then(res => {
+                                        console.log('highlight')
+                                    console.log(res)
+                                        
+                                    }).catch(err => {
+                                        // nothing here
+                                        console.log(err)
+                                    })
+                                
+                                } catch (err) {
+                                    alert("A imagem do banner de destaque não foi enviada")
+                                }
+                            },10000)
                          } 
                      }
                  } else {
@@ -475,25 +477,27 @@ export default function Dashboard() {
                         if(editImageUploadDestaque !== ""){
                         
                             // vai tentar salvar a imagem de destaque
-                            try {
-                                var filename = `${editId}.${editImageUploadDestaqueExtension}`
-                                
-                                const formData = new FormData();
-                                formData.append('file',  editImageUploadDestaque, filename);
-                                formData.append('type', 'highlight')
-                                Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
-                                .then(res => {
-                                console.log('highlight')
-                                  console.log(res)
+                            setTimeout(function () {
+                                try {
+                                    var filename = `${editId}.${editImageUploadDestaqueExtension}`
                                     
-                                }).catch(err => {
-                                    // nothing here
-                                    console.log(err)
-                                })
-                            
-                            } catch (err) {
-                                alert("A imagem do banner de destaque não foi enviada")
-                            }
+                                    const formData = new FormData();
+                                    formData.append('file',  editImageUploadDestaque, filename);
+                                    formData.append('type', 'highlight')
+                                    Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
+                                    .then(res => {
+                                    console.log('highlight')
+                                    console.log(res)
+                                        
+                                    }).catch(err => {
+                                        // nothing here
+                                        console.log(err)
+                                    })
+                                
+                                } catch (err) {
+                                    alert("A imagem do banner de destaque não foi enviada")
+                                }
+                            }, 10000);   
                         } 
                     }
                 } else {
