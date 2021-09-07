@@ -334,7 +334,7 @@ export default function Dashboard() {
                                 } catch (err) {
                                     alert("A imagem do banner de destaque não foi enviada")
                                 }
-                            },10000)
+                            },5000)
                          } 
                      }
                  } else {
@@ -497,7 +497,7 @@ export default function Dashboard() {
                                 } catch (err) {
                                     alert("A imagem do banner de destaque não foi enviada")
                                 }
-                            }, 10000);   
+                            }, 5000);   
                         } 
                     }
                 } else {
