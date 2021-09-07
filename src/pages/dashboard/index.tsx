@@ -282,13 +282,15 @@ export default function Dashboard() {
                          try {
                              var filename = `${res.data.insertId}.${addImageUploadExtension}`
                              
+                            
+
                              const formData = new FormData();
                              formData.append('file',  addImageUpload, filename);
- 
+                             formData.append('type', 'product')
                              
                              Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
                              .then(res => {
-				
+                                console.log('product')
                                console.log(res)
                                 
                             }).catch(err => {
@@ -313,11 +315,14 @@ export default function Dashboard() {
                              try {
                                  var filename = `${res.data.insertId}.${addImageUploadDestaqueExtension}`
                                  
+                                
+
                                  const formData = new FormData();
                                  formData.append('file',  addImageUploadDestaque, filename);
-                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData)
+                                 formData.append('type', 'highlight')
+                                 Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
                                  .then(res => {
-				
+                                    console.log('highlight')
                                  console.log(res)
                                     
                                 }).catch(err => {
@@ -444,15 +449,16 @@ export default function Dashboard() {
                             
                             const formData = new FormData();
                             formData.append('file',  editImageUpload, filename);
-
+                            formData.append('type', 'product')
                             
                             Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
                             .then(res => {
-				
+                                console.log('product')
                                console.log(res)
                                 
                             }).catch(err => {
                                 // nothing here
+                                
                                 console.log(err)
                             })
                         
@@ -474,9 +480,10 @@ export default function Dashboard() {
                                 
                                 const formData = new FormData();
                                 formData.append('file',  editImageUploadDestaque, filename);
-                                Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEDESTAQUE, formData)
+                                formData.append('type', 'highlight')
+                                Axios.post(process.env.NEXT_PUBLIC_REST_API_ENDPOINT + API_ENDPOINTS.SAVEPHOTO, formData)
                                 .then(res => {
-				
+                                console.log('highlight')
                                   console.log(res)
                                     
                                 }).catch(err => {
