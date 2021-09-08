@@ -48,7 +48,7 @@ import { useTranslation } from "next-i18next";
 export default function MobileMenu() {
 	const [activeMenus, setActiveMenus] = useState<any>([]);
 	const { site_header } = siteSettings;
-	console.log(site_header)
+
 	const { closeSidebar } = useUI();
 	const { t } = useTranslation("menu");
 	const handleArrowClick = (menuName: string) => {
@@ -65,7 +65,7 @@ export default function MobileMenu() {
 
 		setActiveMenus(newActiveMenus);
 	};
-	console.log("entrou aqui")
+
 	const ListMenu = ({
 		dept,
 		data,

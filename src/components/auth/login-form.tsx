@@ -27,7 +27,7 @@ const LoginForm: React.FC = () => {
 			remember_me,
 		});
 		
-		console.log(email +  ' - '  + password)
+		
 		if(email !== undefined && email !== "" && email !== null  && password !== undefined && password !== "" && password !== null ){
 			var md5 = require('md5')
 			
