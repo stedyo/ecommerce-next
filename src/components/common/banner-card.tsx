@@ -15,7 +15,14 @@ interface BannerProps {
 }
 
 function getImage(deviceWidth: number, imgObj: any) {
-	return deviceWidth < 480 ? imgObj.mobile : imgObj.desktop;
+console.log(deviceWidth)
+	if(deviceWidth > 1200){
+		return imgObj.desktop
+	} else if(deviceWidth > 600 && deviceWidth <= 1200){
+		return imgObj.tablet
+	} else {
+		return imgObj.mobile
+	}
 }
 
 const handleImageError = (e) => {
@@ -39,8 +46,6 @@ const BannerCard: FC<BannerProps> = ({
 		<div style={{width: `100%`}}>
 			<img
 				src={selectedImage.url}
-				width={`${selectedImage.width}px`}
-				height={`${selectedImage.height}px`}
 				alt={title}
 				onError={handleImageError}
 				style={{borderRadius: "20px", objectFit:"cover", width: `${selectedImage.width}px`,  height: `${selectedImage.height}px`}}

@@ -38,7 +38,8 @@ const HeroBlock: React.FC = () => {
 						title: res.data[key].product_name,
 						slug: res.data[key].product_name,
 						image: {
-							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '620', height: '173'},
+							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '620', height: '250'},
+							tablet: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1200', height: '333'},
 							desktop: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1800', height: '500'}
 						}
 					}
@@ -50,7 +51,8 @@ const HeroBlock: React.FC = () => {
 					title: 'Achados do Caramelus',
 					slug: '',
 					image: { 
-						mobile: {url: defaultBanner, width: '480', height: '173'}, 
+						mobile: {url: defaultBanner, width: '620', height: '250'}, 
+						tablet: {url: defaultBanner, width: '1200', height: '333'}, 
 						desktop: {url: defaultBanner, width: '1800', height: '500'} 
 					}
 				}
@@ -64,7 +66,8 @@ const HeroBlock: React.FC = () => {
 				title: 'Achados do Caramelus',
 				slug: '',
 				image: { 
-					mobile: {url: defaultBanner, width: '480', height: '275'}, 
+					mobile: {url: defaultBanner, width: '620', height: '250'}, 
+					tablet: {url: defaultBanner, width: '1200', height: '333'}, 
 					desktop: {url: defaultBanner, width: '1800', height: '500'} 
 					}
 			}
