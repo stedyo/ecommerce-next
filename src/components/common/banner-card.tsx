@@ -1,7 +1,7 @@
-import Image from "next/image";
+//import Image from "next/image";
 import type { FC } from "react";
 import { useWindowSize } from "@utils/use-window-size";
-import cn from "classnames";
+//import cn from "classnames";
 import { LinkProps } from "next/link";
 import React from "react";
 
@@ -26,9 +26,9 @@ const handleImageError = (e) => {
 
 const BannerCard: FC<BannerProps> = ({
 	banner,
-	className,
-	variant = "rounded",
-	effectActive = false,
+	//className,
+	//variant = "rounded",
+	//effectActive = false,
 	//href,
 }) => {
 	const { width } = useWindowSize();
@@ -36,24 +36,19 @@ const BannerCard: FC<BannerProps> = ({
 	const selectedImage = getImage(width, image);
 
 	return (
-		<div className={cn("mx-auto", className)}>
-		
-				<Image
-					src={selectedImage.url}
-					width={selectedImage.width}
-					height={selectedImage.height}
-					alt={title}
-					onError={handleImageError}
-					quality={100}
-					className={cn("bg-gray-300 object-cover w-full", {
-						"rounded-md": variant === "rounded",
-					})}
-				/>
-				{effectActive && (
-					<div className="absolute top-0 -start-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine" />
-				)}
+		<div style={{width: `100%`}}>
+			<img
+				src={selectedImage.url}
+				width={`${selectedImage.width}px`}
+				height={`${selectedImage.height}px`}
+				alt={title}
+				onError={handleImageError}
+				style={{borderRadius: "20px", objectFit:"cover", width: `${selectedImage.width}px`,  height: `${selectedImage.height}px`}}
+				
+			/>
+		</div>	
 			
-		</div>
+	
 	);
 };
 

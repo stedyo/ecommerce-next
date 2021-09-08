@@ -7,6 +7,8 @@ import { SwiperSlide } from "swiper/react";
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import Link from '@components/ui/link';
+//import image from 'next/image';
+//import cn from "classnames";
 
 const breakpoints = {
 	"1500": {
@@ -36,8 +38,8 @@ const HeroBlock: React.FC = () => {
 						title: res.data[key].product_name,
 						slug: res.data[key].product_name,
 						image: {
-							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '620', height: '275'},
-							desktop: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1800', height: '800'}
+							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '620', height: '173'},
+							desktop: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1800', height: '500'}
 						}
 					}
 					setHighlights(highlights => [...highlights, bannerH])
@@ -48,9 +50,9 @@ const HeroBlock: React.FC = () => {
 					title: 'Achados do Caramelus',
 					slug: '',
 					image: { 
-						mobile: {url: defaultBanner, width: '480', height: '275'}, 
-						desktop: {url: defaultBanner, width: '1800', height: '800'} 
-						}
+						mobile: {url: defaultBanner, width: '480', height: '173'}, 
+						desktop: {url: defaultBanner, width: '1800', height: '500'} 
+					}
 				}
 				setHighlights(highlights => [...highlights, defaultBannerObj])
 			}
@@ -63,7 +65,7 @@ const HeroBlock: React.FC = () => {
 				slug: '',
 				image: { 
 					mobile: {url: defaultBanner, width: '480', height: '275'}, 
-					desktop: {url: defaultBanner, width: '1800', height: '800'} 
+					desktop: {url: defaultBanner, width: '1800', height: '500'} 
 					}
 			}
 			setHighlights(highlights => [...highlights, defaultBannerObj])
@@ -93,17 +95,14 @@ const HeroBlock: React.FC = () => {
 						key={`banner--key-${banner?.id}`}
 					>
 					{banner.id > 0 &&
+					
 					<Link href={`${ROUTES.PRODUCT}/${banner.id}`}>
-						<BannerCard
-							banner={banner}
-							href={`${ROUTES.PRODUCT}/}`}
-						/>
+						<BannerCard banner={banner} href={''} />
 					</Link>
+				
 					}
 					{banner.id === 0 &&
-					<BannerCard
-							banner={banner} href={''}						//href={`${ROUTES.PRODUCT}/}`}
-					/>
+						<BannerCard	banner={banner} href={''} />
 					}
 					</SwiperSlide>
 				))}

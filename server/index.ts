@@ -12,7 +12,8 @@ const port = process.env.PORT || 3000;
     const server = express();
 
     
-    server.use('/assets', express.static(process.cwd() + '/public/assets'))
+    server.use('/assets/products', express.static(process.cwd() + '/public/assets/products'))
+    server.use('/assets/highlights', express.static(process.cwd() + '/public/assets/highlights'))
 
     
     server.all("*", (req: Request, res: Response) => {

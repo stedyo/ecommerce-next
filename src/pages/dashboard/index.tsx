@@ -273,7 +273,7 @@ export default function Dashboard() {
                  if(res.data.affectedRows === 1){
  
  
-                     alert("Os dados do produto foram salvos com sucesso")
+                    
  
                      // IMAGEM NORMAL DO PRODUTO
                      if(addImageUpload !== ""){
@@ -302,6 +302,8 @@ export default function Dashboard() {
                          } catch (err) {
                              alert("A imagem do produto não foi enviada")
                          }
+
+                         alert("Os dados do produto foram salvos com sucesso")
                      } 
  
  
@@ -311,7 +313,7 @@ export default function Dashboard() {
                      if(addCheckedDestaque){
                          if(addImageUploadDestaque !== ""){
                          
-                            setTimeout(function () {
+                           
                                 // vai tentar salvar a imagem de destaque
                                 try {
                                     var filename = `${res.data.insertId}.${addImageUploadDestaqueExtension}`
@@ -334,7 +336,7 @@ export default function Dashboard() {
                                 } catch (err) {
                                     alert("A imagem do banner de destaque não foi enviada")
                                 }
-                            },5000)
+                            
                          } 
                      }
                  } else {
@@ -440,8 +442,7 @@ export default function Dashboard() {
                 if(res.data.affectedRows === 1){
 
 
-                    alert("Os dados do produto foram salvos com sucesso")
-
+                    
                     // IMAGEM NORMAL DO PRODUTO
                     if(editImageUpload !== ""){
                                         
@@ -467,6 +468,9 @@ export default function Dashboard() {
                         } catch (err) {
                             alert("A imagem do produto não foi enviada")
                         }
+
+                        alert("Os dados do produto foram salvos com sucesso")
+
                     } 
 
 
@@ -477,7 +481,7 @@ export default function Dashboard() {
                         if(editImageUploadDestaque !== ""){
                         
                             // vai tentar salvar a imagem de destaque
-                            setTimeout(function () {
+                       
                                 try {
                                     var filename = `${editId}.${editImageUploadDestaqueExtension}`
                                     
@@ -497,7 +501,7 @@ export default function Dashboard() {
                                 } catch (err) {
                                     alert("A imagem do banner de destaque não foi enviada")
                                 }
-                            }, 5000);   
+                        
                         } 
                     }
                 } else {

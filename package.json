@@ -26,7 +26,7 @@
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
-    "next": "11.0.0",
+    "next": "^11.1.2",
     "next-i18next": "^8.5.0",
     "next-pwa": "^5.2.21",
     "next-seo": "^4.25.1",
@@ -48,6 +48,7 @@
     "react-tabs": "^3.2.2",
     "react-toastify": "^7.0.4",
     "react-use": "^17.2.4",
+    "sharp": "^0.29.1",
     "swiper": "^6.7.0"
   },
   "devDependencies": {

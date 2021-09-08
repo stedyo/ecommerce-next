@@ -10,7 +10,7 @@ import BestSellerProductFeed from "@components/product/feeds/best-seller-product
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { homeOneBanner as banner } from "@framework/static/banner";
-import BannerCard from "@components/common/banner-card";
+
 
 
 export default function Home() {
@@ -35,13 +35,19 @@ export default function Home() {
 				*/}
 				<Instagram />
 				
-				<br /><br />
+				<br />
+				<br />
 			
-				<BannerCard
-					key={`banner--key${banner.id}`}
-					banner={banner}
-					className="mb-12 lg:mb-14 xl:mb-16 pb-0.5 lg:pb-1 xl:pb-0" href={""}				/>
 
+				<img
+					src="/assets/images/banner/banner-1.png"
+					alt={banner.title}
+					style={{borderRadius: "10px"}}
+				/>
+
+				
+				<br />
+				<br />
 
 				{/* ultimos 15 produtos adicionados --- ? */}
 				<BestSellerProductFeed />

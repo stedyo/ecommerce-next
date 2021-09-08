@@ -55,8 +55,8 @@ var port = process.env.PORT || 3000;
             case 1:
                 _a.sent();
                 server = express_1.default();
-                console.log(process.cwd() + '/public/assets');
-                server.use('/assets', express_1.default.static(process.cwd() + '/public/assets'));
+                server.use('/assets/products', express_1.default.static(process.cwd() + '/public/assets/products'));
+                server.use('/assets/highlights', express_1.default.static(process.cwd() + '/public/assets/highlights'));
                 server.all("*", function (req, res) {
                     return handle(req, res);
                 });
