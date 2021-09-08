@@ -38,9 +38,9 @@ const HeroBlock: React.FC = () => {
 						title: res.data[key].product_name,
 						slug: res.data[key].product_name,
 						image: {
-							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '620', height: '250'},
-							tablet: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1200', height: '333'},
-							desktop: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1800', height: '500'}
+							mobile: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '600', height: '260'},
+							tablet: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '900', height: '390'},
+							desktop: {url: `${process.env.NEXT_PUBLIC_URL_DESTAQUES}/${res.data[key].id}.${res.data[key].photo_ext_destaque}`, width: '1150', height: '500'}
 						}
 					}
 					setHighlights(highlights => [...highlights, bannerH])
@@ -51,9 +51,9 @@ const HeroBlock: React.FC = () => {
 					title: 'Achados do Caramelus',
 					slug: '',
 					image: { 
-						mobile: {url: defaultBanner, width: '620', height: '250'}, 
-						tablet: {url: defaultBanner, width: '1200', height: '333'}, 
-						desktop: {url: defaultBanner, width: '1800', height: '500'} 
+						mobile: {url: defaultBanner, width: '600', height: '260'}, 
+						tablet: {url: defaultBanner, width: '900', height: '390'}, 
+						desktop: {url: defaultBanner, width: '1150', height: '500'} 
 					}
 				}
 				setHighlights(highlights => [...highlights, defaultBannerObj])
@@ -66,9 +66,9 @@ const HeroBlock: React.FC = () => {
 				title: 'Achados do Caramelus',
 				slug: '',
 				image: { 
-					mobile: {url: defaultBanner, width: '620', height: '250'}, 
-					tablet: {url: defaultBanner, width: '1200', height: '333'}, 
-					desktop: {url: defaultBanner, width: '1800', height: '500'} 
+					mobile: {url: defaultBanner, width: '600', height: '260'}, 
+					tablet: {url: defaultBanner, width: '900', height: '390'}, 
+					desktop: {url: defaultBanner, width: '1150', height: '1150'} 
 					}
 			}
 			setHighlights(highlights => [...highlights, defaultBannerObj])

@@ -43,13 +43,12 @@ const BannerCard: FC<BannerProps> = ({
 	const selectedImage = getImage(width, image);
 
 	return (
-		<div style={{width: `100%`}}>
+		<div style={{width: '100%'}}>
 			<img
 				src={selectedImage.url}
 				alt={title}
 				onError={handleImageError}
-				style={{borderRadius: "20px", objectFit:"cover", width: `${selectedImage.width}px`,  height: `${selectedImage.height}px`}}
-				
+				style={{borderRadius: "15px", objectFit:"fill"}}
 			/>
 		</div>	
 			
