@@ -7,8 +7,6 @@ import { SwiperSlide } from "swiper/react";
 import Axios from "axios";
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import Link from '@components/ui/link';
-//import image from 'next/image';
-//import cn from "classnames";
 
 const breakpoints = {
 	"1500": {
@@ -84,8 +82,8 @@ const HeroBlock: React.FC = () => {
 			{highlights.length > 0 &&
 			<Carousel
 				breakpoints={breakpoints}
-				centeredSlides={width < 1500 ? false : true}
-				autoplay={{ delay: 5000 }}
+				centeredSlides={true}
+				autoplay={{ delay: 10000 }}
 				className="mx-0"
 				buttonClassName="hidden"
 				pagination={{
