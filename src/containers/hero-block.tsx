@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BannerCard from "@components/common/banner-card";
 import Carousel from "@components/ui/carousel/carousel";
-import { useWindowSize } from "@utils/use-window-size";
+//import { useWindowSize } from "@utils/use-window-size";
 import { ROUTES } from "@utils/routes";
 import { SwiperSlide } from "swiper/react";
 import Axios from "axios";
@@ -19,7 +19,7 @@ const breakpoints = {
 /*  primeiro menu de destaques */
 const HeroBlock: React.FC = () => {
 	
-	const { width } = useWindowSize();
+	//const { width } = useWindowSize();
 	const defaultBanner = process.env.NEXT_PUBLIC_URL_DESTAQUES + "/default_destaque.png"
 	const [highlights, setHighlights] = useState<any[]>([]);
 
