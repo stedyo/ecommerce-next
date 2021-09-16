@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Image from "next/image";
 import { GiClick } from "react-icons/gi";
 import cn from "classnames";
 import { useTranslation } from "next-i18next";
@@ -93,7 +92,7 @@ const Instagram: React.FC<Props> = ({ className = "", 	productVariant = "list" }
 					target="_blank"
 					onClick={() => handleProductView(item.id)}
 				>
-					<Image
+					<img
 						src={item.image ?? "/assets/placeholder/instagram.svg"}
 						alt={t(`${item.title}`) || t("text-instagram-thumbnail")}
 						width={300}
