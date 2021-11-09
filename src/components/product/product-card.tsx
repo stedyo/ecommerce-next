@@ -22,7 +22,7 @@ const ProductCard: FC<ProductProps> = ({
 	imageContentClassName = "",
 	variant = "list",
 	imgWidth = 340,
-	imgHeight = 440,
+	imgHeight = 340,
 
 }) => {
 	
@@ -79,11 +79,12 @@ const ProductCard: FC<ProductProps> = ({
 					src={product?.urlImagem}
 					width={imgWidth}
 					height={imgHeight}
+					style={{objectFit: 'fill'}}
 					//quality={100}
 					onError={handleImageError}
 					alt={product?.name || "Product Image"}
-					className={cn("bg-gray-300 object-cover rounded-s-md", {
-						"w-full rounded-md transition duration-200 ease-in group-hover:rounded-b-none":
+					className={cn("bg-gray-300 rounded-s-md", {
+						" rounded-md transition duration-200 ease-in group-hover:rounded-b-none":
 							variant === "grid",
 						"rounded-md transition duration-150 ease-linear transform group-hover:scale-105":
 							variant === "gridSlim",
